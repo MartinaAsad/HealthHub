@@ -86,7 +86,26 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS Empleado (
     FOREIGN KEY (AreaTrabajo) REFERENCES AreaTrabajo(ID)
 )''')
 
+# Insertar el primer registro de empleado
+cursor.execute('''INSERT INTO Empleado (Nombre, Apellido, DNI, AreaTrabajo, Usuario, Contrasenia)
+                  VALUES (?, ?, ?, ?, ?, ?)''', ('martina', 'asad', '654321', 1, 'masad', '12345'))
 
+# Insertar el segundo registro de empleado
+cursor.execute('''INSERT INTO Empleado (Nombre, Apellido, DNI, AreaTrabajo, Usuario, Contrasenia)
+                  VALUES (?, ?, ?, ?, ?, ?)''', ('sebastian', 'lopez', '987654', 2, 'slopez', '6789'))
+
+
+# Realizar una consulta para seleccionar solo el nombre y el DNI de la tabla Empleado
+cursor.execute('SELECT Nombre, DNI FROM Empleado')
+
+# Obtener todos los registros seleccionados
+empleados = cursor.fetchall()
+
+# Imprimir los registros
+for empleado in empleados:
+    print("Nombre:", empleado[0])
+    print("DNI:", empleado[1])
+    print("-------------")
 
 # Guardar los cambios en la base de datos
 conn.commit()
