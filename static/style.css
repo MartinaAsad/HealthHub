@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;  
+  }
+  
+  .formulario-registro{
+    width:400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top:50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .formulario-registro h1{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align:center;
+  }
+  
+  .campos{
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+  }
+  
+  .formulario-registro .botonEnviar{
+    width:100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  
+  h2{
+    color:violet;
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+  
+  body .botonEnviar{
+    width:100%;
+    background: #1f53c5;
+    border: none;
+    color: white;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  body p{
+    padding-bottom:20px;
+  }
