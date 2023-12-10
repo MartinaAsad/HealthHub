@@ -19,6 +19,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS CitaMedica (
     Estado TEXT,
     Paciente INTEGER,
     Medico INTEGER,
+    NombreUsuario TEXT,
     FOREIGN KEY (Paciente) REFERENCES Paciente(ID),
     FOREIGN KEY (Medico) REFERENCES Medico(ID)
 )''')
@@ -85,6 +86,56 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS Empleado (
     Contrasenia TEXT,
     FOREIGN KEY (AreaTrabajo) REFERENCES AreaTrabajo(ID)
 )''')
+
+# Inserts para la tabla Medico
+medico_data = [
+    ('Dr. Juan', 'Pérez', 'Cardiología', 15, 'Universidad Central', 2005),
+    ('Dra. María', 'Gómez', 'Dermatología', 12, 'Universidad Nacional', 2010),
+    ('Dr. Carlos', 'Rodríguez', 'Pediatría', 20, 'Universidad del Este', 2002),
+    ('Dra. Laura', 'López', 'Oftalmología', 18, 'Universidad del Oeste', 2007),
+    ('Dr. Andrés', 'Martínez', 'Cirugía General', 22, 'Universidad Sur', 2000),
+    ('Dra. Ana', 'Fernández', 'Ginecología', 17, 'Universidad Norte', 2009),
+    ('Dr. Pablo', 'Herrera', 'Neurología', 14, 'Universidad Este', 2012),
+    ('Dra. Isabel', 'Ramírez', 'Psiquiatría', 19, 'Universidad Oeste', 2006),
+    ('Dr. Martín', 'Díaz', 'Ortopedia', 21, 'Universidad Sur', 2003),
+    ('Dra. Carla', 'Gutiérrez', 'Endocrinología', 16, 'Universidad Centro', 2008)
+]
+
+for medico_entry in medico_data:
+    cursor.execute('''INSERT INTO Medico (Nombre, Apellido, Especialidad, AniosExperiencia, LugarGraduacion, AnioGraduacion)
+                      VALUES (?, ?, ?, ?, ?, ?)''', medico_entry)
+
+# Inserts para la tabla Paciente
+paciente_data = [
+    ('Ana', 'García', '12345678', 'contrasenia1', 'ana@gmail.com', '123-456-7890', 'Calle A #123'),
+    ('Pedro', 'Sánchez', '98765432', 'contrasenia2', 'pedro@gmail.com', '987-654-3210', 'Calle B #456'),
+    ('Luisa', 'Hernández', '87654321', 'contrasenia3', 'luisa@gmail.com', '567-890-1234', 'Calle C #789'),
+    ('Roberto', 'González', '23456789', 'contrasenia4', 'roberto@gmail.com', '234-567-8901', 'Calle D #012'),
+    ('Sofía', 'Díaz', '34567890', 'contrasenia5', 'sofia@gmail.com', '345-678-9012', 'Calle E #345'),
+    ('Carlos', 'Martínez', '56789012', 'contrasenia6', 'carlos@gmail.com', '456-789-0123', 'Calle F #678'),
+    ('Laura', 'Ramírez', '67890123', 'contrasenia7', 'laura@gmail.com', '567-890-1234', 'Calle G #901'),
+    ('Pablo', 'Gutiérrez', '78901234', 'contrasenia8', 'pablo@gmail.com', '678-901-2345', 'Calle H #234'),
+    ('Isabel', 'Díaz', '89012345', 'contrasenia9', 'isabel@gmail.com', '789-012-3456', 'Calle I #567'),
+    ('Martín', 'Fernández', '90123456', 'contrasenia10', 'martin@gmail.com', '890-123-4567', 'Calle J #890')
+]
+
+for paciente_entry in paciente_data:
+    cursor.execute('''INSERT INTO Paciente (Nombre, Apellido, DNI, Contrasenia, CorreoElectronico, Telefono, Direccion)
+                      VALUES (?, ?, ?, ?, ?, ?, ?)''', paciente_entry)
+
+# Consultar y mostrar los datos de la tabla Medico
+cursor.execute("SELECT * FROM Medico")
+medico_data = cursor.fetchall()
+print("Datos de la tabla Medico:")
+for row in medico_data:
+    print(row)
+
+# Consultar y mostrar los datos de la tabla Paciente
+cursor.execute("SELECT * FROM Paciente")
+paciente_data = cursor.fetchall()
+print("\nDatos de la tabla Paciente:")
+for row in paciente_data:
+    print(row)
 
 # Insertar el primer registro de empleado
 cursor.execute('''INSERT INTO Empleado (Nombre, Apellido, DNI, AreaTrabajo, Usuario, Contrasenia)

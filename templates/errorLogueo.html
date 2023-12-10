@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Error Logueo</title>
 </head>
 <body>
-    <h1>Usuario o clave erronea. Por favor, volver a intentar</h1>
-    <a href="/">Volver a intentar</a>
+    <h2>Usuario y/o clave erronea. Por favor, volver a intentar</h2>
+    <a class="reintentar" href="/">Volver a intentar</a>
 </body>
 </html>
