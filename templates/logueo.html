@@ -8,6 +8,22 @@
     <h2>Bienvenido al sistema.</h2>
     <p>Usuario: {{ usuario }}</p>
     <!-- <p>Contraseña: {{ contrasenia }}</p> -->
-  <a class="botonEnviar" href="/">Cerrar sesion</a>  
+  
+  <!-- Contenedor para los botones de acciones -->
+    <div class="acciones-container">
+        <!-- Botón para agendar cita -->
+      <a class="botonEnviar" href="{{ url_for('agendar_cita') }}">Agendar Cita</a>
+
+      <!-- Botón para consultar citas -->
+      <a class="botonEnviar" href="{{ url_for('consultar_citas') }}">Consultar Citas</a>
+    </div>  
+      <br>
+    </div>
+  <br>
+    <div>
+    <!-- Botón para cerrar sesión -->
+      <a class="CerrarSesion" href="/">Cerrar sesión</a>  
+    </div>
+  
 </body>
 </html>

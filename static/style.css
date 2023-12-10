@@ -1,66 +1,168 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;  
-  }
-  
-  .formulario-registro{
-    width:400px;
-    background: #24303c;
-    padding: 30px;
-    margin: auto;
-    margin-top:50px;
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
-    box-shadow: 7px 13px 37px #000;
-  }
-  
-  .formulario-registro h1{
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align:center;
-  }
-  
-  .campos{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;  
+}
+
+.formulario-registro{
+  width:400px;
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top:50px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.formulario-registro h1{
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align:center;
+}
+
+.campos{
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.formulario-registro .botonEnviar{
+  width: 50%;
+  text-align: center;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+h2{
+  color:violet;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+body .botonEnviar{
+  width: 50%;
+  text-align: center;
+  background: #1f53c5;
+  border: none;
+  color: white;
+  padding: 12px;
+  margin: 16px 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+body p{
+  padding-bottom:20px;
+}
+
+#logueoExitoso{
+  padding-left:20px;
+}
+
+/* Agrega estos estilos para las tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #1f53c5;
+  color: white;
+}
+
+/* Estilo para resaltar filas al pasar el mouse */
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Otros estilos que puedan necesitar ajustes */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'calibri';
+}
+
+/* Estilo para editar_citas */
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input {
     width: 100%;
-    background: #24303c;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 8px;
     margin-bottom: 16px;
-    border: 1px solid #1f53c5;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: white;
-  }
-  
-  .formulario-registro .botonEnviar{
-    width:100%;
-    background: #1f53c5;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
     border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
-  }
-  
-  h2{
-    color:violet;
-    padding-top:20px;
-    padding-bottom:20px;
-  }
-  
-  body .botonEnviar{
-    width:100%;
-    background: #1f53c5;
-    border: none;
-    color: white;
-    padding: 12px;
-    margin: 16px 0;
-    font-size: 16px;
+    border-radius: 4px;
+}
+
+a {
+    display: block;
+    margin-top: 16px;
+    color: #007bff;
     text-decoration: none;
-  }
-  
-  body p{
-    padding-bottom:20px;
-  }
+}
+
+/* Estilos para los botones "Agendar Cita" y "Consultar Citas" dentro de la clase "submit" */
+.submit a.btn-agendar, .submit a.btn-consultar {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

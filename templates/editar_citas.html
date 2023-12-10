@@ -1,0 +1,37 @@
+<!-- editar_cita.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Editar Cita</title>
+</head>
+<body>
+    <h2>Vamos a editar las Citas Médicas</h2>
+
+    {% if mensaje_bienvenida %}
+        <p>{{ mensaje_bienvenida }}</p>
+    {% endif %}
+
+    <!-- Formulario para editar cita -->
+    <form method="post" action="{{ url_for('editar_cita', cita_id=cita_existente[0]) }}">
+        <label for="fecha_hora">Fecha y Hora:</label>
+        <input type="datetime-local" id="fecha_hora" name="fecha_hora" required value="{{ cita_existente[1] }}"><br>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required value="{{ cita_existente[2] }}"><br>
+
+        <label for="paciente">ID del Paciente:</label>
+        <input type="text" id="paciente" name="paciente" required value="{{ cita_existente[3] }}"><br>
+
+        <label for="medico">ID del Médico:</label>
+        <input type="text" id="medico" name="medico" required value="{{ cita_existente[4] }}"><br>
+
+        <label for="nombreUusuario">Nombre Usuario:</label>
+        <input type="text" id="nombreUusuario" name="nombreUusuario" required value="{{ cita_existente[5] }}"><br>
+
+        <input type="submit" value="Confirmar">
+    </form>
+
+    <a href="{{ url_for('consultar_citas') }}">Volver a Consultar Citas</a>
+</body>
+</html>
